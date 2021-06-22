@@ -17,7 +17,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     steps:
     # Checkout the repo
     - uses: actions/checkout@master
@@ -66,7 +66,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     steps:
     - name: Download a Build Artifact
       uses: actions/download-artifact@v2
